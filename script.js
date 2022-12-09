@@ -64,9 +64,8 @@ rainbowGrid.addEventListener('click', () => {
   let r = Math.floor(Math.random()*256);
   let g = Math.floor(Math.random()*256);
   let b = Math.floor(Math.random()*256);
-  let a = (Math.random()*1);
     if(e.target.classList.contains('gridtemp')) {
-      e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${a})`
+      e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b}, 0.8)`
     }
   })
 })
