@@ -6,6 +6,7 @@ const gridSize = document.querySelector("#grid-size");
 const rangeDisplayVal = document.querySelector("#range-value");
 const erase = document.querySelector('.erase');
 const clearGrid = document.querySelector('.clear-grid');
+const rainbowGrid = document.querySelector('.rainbow-grid');
 
 
 //store current color
@@ -19,6 +20,7 @@ let currentGridValue;
 
 gridSize.addEventListener('change', addGrid);
 
+//show grid size on change
 gridSize.addEventListener('input', (event) => {
   rangeDisplayVal.value = event.target.value;
 })
@@ -55,6 +57,19 @@ colorToggle.addEventListener('click', () => {
     }
   });
 });
+
+//rainbow grid
+rainbowGrid.addEventListener('click', () => {
+  contSqr.addEventListener('mouseover', (e) => {
+  let r = Math.floor(Math.random()*256);
+  let g = Math.floor(Math.random()*256);
+  let b = Math.floor(Math.random()*256);
+  let a = (Math.random()*1);
+    if(e.target.classList.contains('gridtemp')) {
+      e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${a})`
+    }
+  })
+})
 
 
 //clear grid

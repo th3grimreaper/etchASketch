@@ -6,11 +6,15 @@
  body {
    margin: 0;
    padding: 0;
+   background-color: rgb(16,15,15);
+   font-family: 'Roboto', sans-serif;
  }
 
 .container {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
   /* grid-template-columns: 1fr 4fr; */
   /* grid-template-rows: 4fr; */
   width: 90%;
@@ -21,39 +25,79 @@
 .options {
   display: flex;
   flex-direction: column;
-  width: min(30%, 300px);
+  width: clamp(300px, 60%, 500px);
   text-align: center;
-  padding: 0 3em;
-  justify-content: center;
+  background-color: rgb(51,51,51);
+  padding: 3em;
   gap: 0.5em;
+}
+
+.color-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.color-opt button {
+  width: 100%;
 }
 
 .color-opt + .size-input {
   margin-top: 0.5em;
 }
 
-button {
+.size-input {
+  display: flex;
+  justify-content: space-around;
+}
+
+output {
+  color: white;
+}
+
+.size-input ~ button {
   margin-top: 0.5em;
+}
+
+button {
   padding: 0.25em 0.75em;
   border-radius: 10px;
+  border: 1px solid #333333;
   font-size: 0.9rem;
-  background: #333333;
+  background-color: rgb(20,24,26);
   color: white;
 }
 
 button:active,
 button:hover {
-  background: grey;
+  background: #55555f;
 }
 
 .square {
   aspect-ratio: 1;
   width: clamp(300px, 60%, 500px);
+  background-color: white;
   /* margin: 0 auto; */
-  border: 2px solid black;
+  border: 2px solid #353535;
   display: grid;
 }
 
 .gridtemp {
   border: 1px solid white;
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .options {
+    width: min(30%, 300px);
+    padding: 0 3em;
+    align-self: stretch;
+    justify-content: center;
+  }
 }
