@@ -1,6 +1,5 @@
  * {
   box-sizing: border-box;
-  /* border: 2px solid red; */
  }
 
  body {
@@ -15,11 +14,15 @@
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  /* grid-template-columns: 1fr 4fr; */
-  /* grid-template-rows: 4fr; */
   width: 90%;
   height: 90%;
-  margin: 3em auto;
+  margin: 1.5em auto;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
 }
 
 .options {
